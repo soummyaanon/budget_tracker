@@ -45,7 +45,7 @@ class Application(tk.Frame):
 
         self.expense_category_label = tk.Label(self, text="Expense Category")
         self.expense_category_label.pack()
-        self.expense_category_combobox = ttk.Combobox(self, values=["Rent", "Groceries", "Transportation", "Entertainment","Taxes", "Other"])
+        self.expense_category_combobox = ttk.Combobox(self, values=["Rent","vechels", "Groceries", "Transportation", "Entertainment","Taxes", "Other"])
         self.expense_category_combobox.pack()
 
         self.expense_button = tk.Button(self, text="Add Expense", command=self.add_expense)
