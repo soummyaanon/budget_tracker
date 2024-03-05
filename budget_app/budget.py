@@ -27,3 +27,5 @@ class Budget:
 
     def get_expenditures(self):
         return [(expense.amount, expense.category) for expense in self.expenses]
+    def get_income(self):
+        return self.income

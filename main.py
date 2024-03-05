@@ -5,6 +5,7 @@ from tkinter import ttk, messagebox
 from pymongo import MongoClient
 from budget_app.budget import Budget
 from budget_app.currency_converter import convert_currency
+import pandas as pd
 
 
 # Create a GUI application
@@ -38,6 +39,13 @@ class Application(tk.Frame):
         self.income_button = tk.Button(self, text="Add Income", command=self.add_income)
         self.income_button.pack()
 
+        self.tax_rate_label = tk.Label(self, text="Tax Rate (%)")
+        self.tax_rate_label.pack()
+        self.tax_rate_entry = tk.Entry(self)
+        self.tax_rate_entry.pack()
+        self.tax_button = tk.Button(self, text="Calculate Net Income", command=self.calculate_net_income)
+        self.tax_button.pack()
+
         self.expense_label = tk.Label(self, text="Expense")
         self.expense_label.pack()
         self.expense_entry = tk.Entry(self)
@@ -56,6 +64,9 @@ class Application(tk.Frame):
 
         self.show_expenditures_button = tk.Button(self, text="Show Expenditures", command=self.show_expenditures)
         self.show_expenditures_button.pack()
+
+        self.download_button = tk.Button(self, text="Download Data", command=self.download_data_as_csv)
+        self.download_button.pack()
 
         self.amount_label = tk.Label(self, text="Amount")
         self.amount_label.pack()
@@ -88,6 +99,14 @@ class Application(tk.Frame):
             amount = float(income)
             self.budget.add_income(amount)
             messagebox.showinfo("Income", f"Added income of {amount}")
+    
+    def calculate_net_income(self):
+        tax_rate = self.tax_rate_entry.get()
+        if tax_rate:  # check if the field is not empty
+            tax_rate = float(tax_rate) / 100
+            net_income = self.budget.get_income() * (1 - tax_rate)
+            self.collection.insert_one({"Net Income": net_income})
+            messagebox.showinfo("Net Income", f"Net income after {tax_rate * 100}% tax is {net_income}")
 
     def add_expense(self):
         expense = self.expense_entry.get()
@@ -116,6 +135,20 @@ class Application(tk.Frame):
         expenditures = self.budget.get_expenditures()
         expenditures_str = "\n".join(f"{amount} for {category}" for amount, category in expenditures)
         messagebox.showinfo("Expenditures", expenditures_str)
+    
+    
+    def download_data_as_csv(self):
+        # Fetch all documents from the collection
+        data = self.collection.find()
+
+        # Convert the data to a pandas DataFrame
+        df = pd.DataFrame(list(data))
+
+        # Save the DataFrame as a CSV file
+        df.to_csv('data.csv', index=False)
+
+
+    
 
 
 # Create the application
