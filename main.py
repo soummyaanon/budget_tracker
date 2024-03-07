@@ -16,6 +16,8 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
 
+        self.config(bg="grey")
+
         # Create a MongoClient to the running mongod instance
         self.client = MongoClient('mongodb://localhost:27017/')
 
@@ -32,23 +34,23 @@ class Application(tk.Frame):
 
 # Create the widgets
     def create_widgets(self):
-        self.income_label = tk.Label(self, text="Income")
+        self.income_label = tk.Label(self, text="Income", width=100, height=2)
         self.income_label.pack()
-        self.income_entry = tk.Entry(self)
+        self.income_entry = tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.income_entry.pack()
-        self.income_button = tk.Button(self, text="Add Income", command=self.add_income)
+        self.income_button = tk.Button(self, text="Add Income", command=self.add_income, width=30, height=2, ) 
         self.income_button.pack()
 
         self.tax_rate_label = tk.Label(self, text="Tax Rate (%)")
         self.tax_rate_label.pack()
-        self.tax_rate_entry = tk.Entry(self)
+        self.tax_rate_entry = tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.tax_rate_entry.pack()
-        self.tax_button = tk.Button(self, text="Calculate Net Income", command=self.calculate_net_income)
+        self.tax_button = tk.Button(self, text="Calculate Net Income", command=self.calculate_net_income, width=30, height=2,) 
         self.tax_button.pack()
 
         self.expense_label = tk.Label(self, text="Expense")
         self.expense_label.pack()
-        self.expense_entry = tk.Entry(self)
+        self.expense_entry =tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.expense_entry.pack()
 
         self.expense_category_label = tk.Label(self, text="Expense Category")
@@ -56,21 +58,21 @@ class Application(tk.Frame):
         self.expense_category_combobox = ttk.Combobox(self, values=["Rent","Veichile", "Groceries", "Transportation", "Entertainment","Taxes", "Other"])
         self.expense_category_combobox.pack()
 
-        self.expense_button = tk.Button(self, text="Add Expense", command=self.add_expense)
+        self.expense_button = tk.Button(self, text="Add Expense", command=self.add_expense, width=30, height=2,)
         self.expense_button.pack()
 
-        self.remaining_budget_button = tk.Button(self, text="Show Remaining Budget", command=self.show_remaining_budget)
+        self.remaining_budget_button = tk.Button(self, text="Show Remaining Budget", command=self.show_remaining_budget, width=30, height=2,)
         self.remaining_budget_button.pack()
 
-        self.show_expenditures_button = tk.Button(self, text="Show Expenditures", command=self.show_expenditures)
+        self.show_expenditures_button = tk.Button(self, text="Show Expenditures", command=self.show_expenditures, width=30, height=2,)
         self.show_expenditures_button.pack()
 
-        self.download_button = tk.Button(self, text="Download Data", command=self.download_data_as_csv)
+        self.download_button = tk.Button(self, text="Download Data", command=self.download_data_as_csv, width=30, height=2,)
         self.download_button.pack()
 
         self.amount_label = tk.Label(self, text="Amount")
         self.amount_label.pack()
-        self.amount_entry = tk.Entry(self)
+        self.amount_entry =tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.amount_entry.pack()
 
         self.from_currency_label = tk.Label(self, text="From Currency")
@@ -83,10 +85,10 @@ class Application(tk.Frame):
         self.to_currency_combobox = ttk.Combobox(self, values=[ "INR","USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "SEK", "NZD"])
         self.to_currency_combobox.pack()
 
-        self.convert_button = tk.Button(self, text="Convert Currency", command=self.convert_currency)
+        self.convert_button = tk.Button(self, text="Convert Currency", command=self.convert_currency, width=30, height=2,)
         self.convert_button.pack()
 
-        self.quit = tk.Button(self, text="QUIT", fg="red", command=self.master.destroy)
+        self.quit = tk.Button(self, text="QUIT", fg="red", command=self.master.destroy, width=10, height=2,)
         self.quit.pack()
 
 
