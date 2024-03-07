@@ -16,7 +16,8 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
 
-        self.config(bg="grey")
+        self.config(bg="light steel blue")
+
 
         # Create a MongoClient to the running mongod instance
         self.client = MongoClient('mongodb://localhost:27017/')
@@ -34,7 +35,7 @@ class Application(tk.Frame):
 
 # Create the widgets
     def create_widgets(self):
-        self.income_label = tk.Label(self, text="Income", width=100, height=2)
+        self.income_label = tk.Label(self, text="Personal Budget Trackert", width=100, height=2)
         self.income_label.pack()
         self.income_entry = tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.income_entry.pack()

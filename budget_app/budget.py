@@ -23,7 +23,7 @@ class Budget:
     def get_remaining_budget(self):
         total_expenditures = sum(expense.amount for expense in self.expenses)
         remaining_budget = self.income - total_expenditures
-        return remaining_budget / self.income * 100  # return remaining budget as a percentage of income
+        return remaining_budget  # return remaining budget as a simple value
 
     def get_expenditures(self):
         return [(expense.amount, expense.category) for expense in self.expenses]
