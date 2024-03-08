@@ -29,7 +29,7 @@ class Application(tk.Frame):
         self.collection = self.db['MyDATA']
 
         # Initialize the budget attribute
-        self.budget = Budget(0)  # assuming Budget is a class you have defined elsewhere
+        self.budget = Budget(0) 
 
 
 
