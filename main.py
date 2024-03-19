@@ -16,19 +16,16 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
 
-        self.config(bg="light steel blue")
 
-
-        # Create a MongoClient to the running mongod instance
         self.client = MongoClient('mongodb://localhost:27017/')
 
-        # Get a reference to a particular database
         self.db = self.client['Budget']
 
-        # Access a collection in the database
+
         self.collection = self.db['MyDATA']
 
-        # Initialize the budget attribute
+        self.user_register = False
+
         self.budget = Budget(0) 
 
 
@@ -92,7 +89,37 @@ class Application(tk.Frame):
         self.quit = tk.Button(self, text="QUIT", fg="red", command=self.master.destroy, width=10, height=2,)
         self.quit.pack()
 
+        self.register_button = tk.Button(self, text="Register", command=self.create_user_form, width=10, height=2,)
+        self.register_button.pack(side=tk.LEFT, padx=5, pady=5 , anchor="w",)
 
+    def create_user_form(self):
+        self.user_form = tk.Toplevel(self)
+        self.user_form.title("User Registration")
+
+        self.name_label = tk.Label(self.user_form, text="Name")
+        self.name_label.pack()
+
+        self.name_entry = tk.Entry(self.user_form)
+        self.name_entry.pack()
+
+        self.email_label = tk.Label(self.user_form, text="Email")
+        self.email_label.pack()
+
+        self.email_entry = tk.Entry(self.user_form)
+        self.email_entry.pack()
+
+        self.submit_button = tk.Button(self.user_form, text="Submit", command=self.submit_user_form)
+        self.submit_button.pack()
+    def submit_user_form(self):
+        name = self.name_entry.get()
+        email = self.email_entry.get()
+
+        if name and email:  # check if the fields are not empty
+            self.collection.insert_one({"Name": name, "Email": email})
+            messagebox.showinfo("User Registration", "User registered successfully!")
+            self.user_registered = True
+        else:
+            messagebox.showerror("Error", "Please fill in all fields")
 
 # Define the methods
     def add_income(self):
@@ -102,6 +129,9 @@ class Application(tk.Frame):
             amount = float(income)
             self.budget.add_income(amount)
             messagebox.showinfo("Income", f"Added income of {amount}")
+        if not self.user_registered:  # check if a user has been registered
+            messagebox.showerror("Error", "Please register before adding expenses")
+            return
     
     def calculate_net_income(self):
         tax_rate = self.tax_rate_entry.get()
@@ -119,6 +149,9 @@ class Application(tk.Frame):
             category = self.expense_category_combobox.get()
             if self.budget.add_expense(amount, category):
                 messagebox.showinfo("Expense", f"Added expense of {amount} for {category}")
+            if not self.user_registered:  # check if a user has been registered
+                messagebox.showerror("Error", "Please register before adding expenses")
+                return    
             else:
                 messagebox.showerror("Error", "Expense exceeds remaining budget")
 

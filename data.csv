@@ -1,13 +1,20 @@
-_id,Income,Expense,Net Income,Remaining Budget
-65e979939a244b11fa8892d0,,,,
-65e979939a244b11fa8892d1,,,,
-65e979949a244b11fa8892d2,,,,
-65e97c855fbc7893be39c85d,"50,00000",,,
-65e97c8b5fbc7893be39c85e,5000000,,,
-65e97c915fbc7893be39c85f,,,4000000.0,
-65e97ca75fbc7893be39c860,,100000,,
-65e97cb15fbc7893be39c861,,,,100.0
-65e97cbb5fbc7893be39c862,,100000,,
-65e97cc25fbc7893be39c863,,100000,,
-65e97ccd5fbc7893be39c864,,50,,
-65e97cd25fbc7893be39c865,,,,99.99900000000001
+_id,Name,Email,Income,Net Income,Expense,Remaining Budget
+65f9de2fbaa63db00854b2b3,fhkgfvhkygvhjv,vjv@gmail.com,,,,
+65f9df63003eec5be2dd0fe9,,,"10,00000",,,
+65f9df6d003eec5be2dd0fea,,,1000000,,,
+65f9df74003eec5be2dd0feb,,,,600000.0,,
+65f9df82003eec5be2dd0fec,,,,,3000,
+65f9df85003eec5be2dd0fed,,,,,,997000.0
+65f9df9d003eec5be2dd0fee,soumyaranjan ,123@gmail.com,,,,
+65f9e207c584f2edcaadb876,,,rr,,,
+65f9e20dc584f2edcaadb877,,,122,,,
+65f9e212c584f2edcaadb878,,,122,,,
+65f9e219c584f2edcaadb879,,,,,33,
+65f9e21dc584f2edcaadb87a,,,,,,211.0
+65f9e224c584f2edcaadb87b,,,,190.32,,
+65f9e228c584f2edcaadb87c,,,,190.32,,
+65f9e2a8b487ade9ad057737,soumyaranjan panda,"abc@gmail,com",,,,
+65f9e2b0b487ade9ad057738,,,111,,,
+65f9e2b5b487ade9ad057739,,,,99.9,,
+65f9e2c3b487ade9ad05773a,,,,,10,
+65f9e2c9b487ade9ad05773b,,,,,,101.0
