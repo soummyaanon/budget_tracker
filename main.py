@@ -93,25 +93,25 @@ class Application(tk.Frame):
 
         self.register_button = tk.Button(self, text="Register", command=self.create_user_form, width=10, height=2,)
         self.register_button.pack(side=tk.LEFT, padx=5, pady=5 , anchor="w",)
-
     def create_user_form(self):
         self.user_form = tk.Toplevel(self)
         self.user_form.title("User Registration")
+        self.user_form.configure(bg='light steel blue')
 
-        self.name_label = tk.Label(self.user_form, text="Name")
-        self.name_label.pack()
+        self.name_label = tk.Label(self.user_form, text="Name", bg='light steel blue', fg='white')
+        self.name_label.pack(pady=10)
 
         self.name_entry = tk.Entry(self.user_form)
-        self.name_entry.pack()
+        self.name_entry.pack(ipady=10)
 
-        self.email_label = tk.Label(self.user_form, text="Email")
-        self.email_label.pack()
+        self.email_label = tk.Label(self.user_form, text="Email", bg='light steel blue', fg='white')
+        self.email_label.pack(pady=10)
 
         self.email_entry = tk.Entry(self.user_form)
-        self.email_entry.pack()
+        self.email_entry.pack(ipady=10)
 
-        self.submit_button = tk.Button(self.user_form, text="Submit", command=self.submit_user_form)
-        self.submit_button.pack()
+        self.submit_button = tk.Button(self.user_form, text="Submit", command=self.submit_user_form, bg='white', fg='black')
+        self.submit_button.pack(pady=10)
     def submit_user_form(self):
         name = self.name_entry.get()
         email = self.email_entry.get()
@@ -184,6 +184,7 @@ class Application(tk.Frame):
 
         # Save the DataFrame as a CSV file
         df.to_csv('data.csv', index=False)
+        messagebox.showinfo("Download Data", "Data downloaded successfully")
 
 
     
