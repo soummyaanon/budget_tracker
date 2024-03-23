@@ -6,6 +6,8 @@ from pymongo import MongoClient
 from budget_app.budget import Budget
 from budget_app.currency_converter import convert_currency
 import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
 # Create a GUI application
@@ -27,6 +29,25 @@ class Application(tk.Frame):
         self.user_register = False
 
         self.budget = Budget(0) 
+
+    def show_graph(self):
+        # Fetch all documents from the collection
+        data = self.collection.find()
+
+        # Convert the data to a pandas DataFrame
+        df = pd.DataFrame(list(data))
+
+        # Create a figure and a set of subplots
+        fig, ax = plt.subplots()
+
+        # Create a bar graph of the user's data
+        df.plot(kind='bar', ax=ax)
+
+        # Create a canvas and add it to a new Tkinter window
+        graph_window = tk.Toplevel(self)
+        canvas = FigureCanvasTkAgg(fig, master=graph_window)
+        canvas.draw()
+        canvas.get_tk_widget().pack()
 
 
 
@@ -93,6 +114,10 @@ class Application(tk.Frame):
 
         self.register_button = tk.Button(self, text="Register", command=self.create_user_form, width=10, height=2,)
         self.register_button.pack(side=tk.LEFT, padx=5, pady=5 , anchor="w",)
+
+        self.graph_button = tk.Button(self, text="Graph", command=self.show_graph, width=30, height=2)
+        self.graph_button.pack(side=tk.RIGHT, padx=5, pady=5, anchor="e")
+
     def create_user_form(self):
         self.user_form = tk.Toplevel(self)
         self.user_form.title("User Registration")
