@@ -115,7 +115,7 @@ class Application(tk.Frame):
         self.register_button = tk.Button(self, text="Register", command=self.create_user_form, width=10, height=2,)
         self.register_button.pack(side=tk.LEFT, padx=5, pady=5 , anchor="w",)
 
-        self.graph_button = tk.Button(self, text="Graph", command=self.show_graph, width=30, height=2)
+        self.graph_button = tk.Button(self, text=" Show Graph", command=self.show_graph, width=10, height=2)
         self.graph_button.pack(side=tk.RIGHT, padx=5, pady=5, anchor="e")
 
     def create_user_form(self):
