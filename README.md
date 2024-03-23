@@ -28,28 +28,42 @@ BudgetApp is a simple budget management application built with Python and MongoD
     ```bash
     python main.py
     ```
-2. The application will open a GUI. 
 
-![User Registration](https://photos.google.com/u/4/photo/AF1QipPZ-1FTZM4AlMur9Ngme9_gQP3MQUo1R4mSXqg)
+### 1. User Registration
+
+![User Registration](https://github.com/soummyaanon/budget_tracker/assets/91568463/6ccddc56-5849-44c2-b80b-daccf347987b)
 
 Enter your details in the user registration form.
 
-3. Enter your income and expenses in the appropriate fields and click the "Add" buttons to add them to your budget.
+### 2. Add Income
 
-![Add Income](https://photos.google.com/u/4/photo/AF1QipNI_0L6XEu_Exmxev_ibAYL_ZtraVVS1HgITCg)
+![Add Income](https://github.com/soummyaanon/budget_tracker/assets/91568463/0d3cdf12-ac2a-4ede-afdf-130e43e29caa)
 
-4. Select an expense category from the dropdown menu when adding an expense.
+Enter your income in the appropriate field and click the "Add" button.
 
-![Add Expense](https://photos.google.com/u/4/photo/AF1QipNXCAFwYXgSAGacrnL6IPdRWrK1Hy9jHR_68BU)
+### 3. Add Expenses
 
-5. Click the "Show Remaining Budget" button to see your remaining budget after all expenses.
+![Add Expense](https://github.com/soummyaanon/budget_tracker/assets/91568463/434cefdf-b810-4ffe-bdbc-047ef952efd8)
 
-![Remaining Budget](https://photos.google.com/u/4/photo/AF1QipMWWrII5UANvQc9umf6WqTWhPjBvKrIpQh8NKk)
+Select an expense category from the dropdown menu and enter the amount. Click the "Add" button to add the expense to your budget.
 
+### 4. Add Tax
 
-6. Use the currency conversion feature to convert amounts between different currencies.
+![Add Tax](https://github.com/soummyaanon/budget_tracker/assets/91568463/4aed6152-bd19-4e38-982f-4bb9bf7ac90a)
 
-![Currency Conversion](https://photos.google.com/u/4/photo/AF1QipMWWrII5UANvQc9umf6WqTWhPjBvKrIpQh8NKk)
+Enter your tax in the appropriate field and click the "Add" button.
+
+### 5. Show Remaining Budget
+
+![Remaining Budget](https://github.com/soummyaanon/budget_tracker/assets/91568463/8c3acb18-b44a-4f46-abca-6bd887970bfc)
+
+Click the "Show Remaining Budget" button to see your remaining budget after all expenses.
+
+### 6. Show Graph
+
+![Show Graph](https://github.com/soummyaanon/budget_tracker/assets/91568463/8862207f-cfa7-4e9b-ae34-69c50d194ede)
+
+Click the "Show Graph" button to see a graphical representation of your income, expenses, and remaining budget.
 
 ## Contributing
 
