@@ -30,29 +30,26 @@ BudgetApp is a simple budget management application built with Python and MongoD
     ```
 2. The application will open a GUI. 
 
-![User Registration](https://example.com/user_registration.png)
+![User Registration](https://photos.google.com/u/4/photo/AF1QipPZ-1FTZM4AlMur9Ngme9_gQP3MQUo1R4mSXqg)
 
 Enter your details in the user registration form.
 
 3. Enter your income and expenses in the appropriate fields and click the "Add" buttons to add them to your budget.
 
-![Add Income](https://example.com/add_income.png)
+![Add Income](https://photos.google.com/u/4/photo/AF1QipNI_0L6XEu_Exmxev_ibAYL_ZtraVVS1HgITCg)
 
 4. Select an expense category from the dropdown menu when adding an expense.
 
-![Add Expense](https://example.com/add_expense.png)
+![Add Expense](https://photos.google.com/u/4/photo/AF1QipNXCAFwYXgSAGacrnL6IPdRWrK1Hy9jHR_68BU)
 
 5. Click the "Show Remaining Budget" button to see your remaining budget after all expenses.
 
-![Remaining Budget](https://example.com/remaining_budget.png)
+![Remaining Budget](https://photos.google.com/u/4/photo/AF1QipMWWrII5UANvQc9umf6WqTWhPjBvKrIpQh8NKk)
 
-6. Click the "Show Expenditures" button to see a list of all your expenses.
 
-![Expenditures](https://example.com/expenditures.png)
+6. Use the currency conversion feature to convert amounts between different currencies.
 
-7. Use the currency conversion feature to convert amounts between different currencies.
-
-![Currency Conversion](https://example.com/currency_conversion.png)
+![Currency Conversion](https://photos.google.com/u/4/photo/AF1QipMWWrII5UANvQc9umf6WqTWhPjBvKrIpQh8NKk)
 
 ## Contributing
 
