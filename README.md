@@ -28,11 +28,31 @@ BudgetApp is a simple budget management application built with Python and MongoD
     ```bash
     python main.py
     ```
-2. The application will open a GUI. Enter your income and expenses in the appropriate fields and click the "Add" buttons to add them to your budget.
-3. Select an expense category from the dropdown menu when adding an expense.
-4. Click the "Show Remaining Budget" button to see your remaining budget after all expenses.
-5. Click the "Show Expenditures" button to see a list of all your expenses.
-6. Use the currency conversion feature to convert amounts between different currencies.
+2. The application will open a GUI. 
+
+![User Registration](user_registration.png)
+
+Enter your details in the user registration form.
+
+3. Enter your income and expenses in the appropriate fields and click the "Add" buttons to add them to your budget.
+
+![Add Income](add_income.png)
+
+4. Select an expense category from the dropdown menu when adding an expense.
+
+![Add Expense](add_expense.png)
+
+5. Click the "Show Remaining Budget" button to see your remaining budget after all expenses.
+
+![Remaining Budget](remaining_budget.png)
+
+6. Click the "Show Expenditures" button to see a list of all your expenses.
+
+![Expenditures](expenditures.png)
+
+7. Use the currency conversion feature to convert amounts between different currencies.
+
+![Currency Conversion](currency_conversion.png)
 
 ## Contributing
 
