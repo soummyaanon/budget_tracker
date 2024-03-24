@@ -36,6 +36,7 @@ class Application(tk.Frame):
 
         # Convert the data to a pandas DataFrame
         df = pd.DataFrame(list(data))
+        df = df[['Income', 'Net Income', 'Expense', 'Remaining Budget']]
 
         # Create a figure and a set of subplots
         fig, ax = plt.subplots()
@@ -60,14 +61,14 @@ class Application(tk.Frame):
         self.income_entry = tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.income_entry.pack()
         self.income_button = tk.Button(self, text="Add Income", command=self.add_income, width=30, height=2, ) 
-        self.income_button.pack()
+        self.income_button.pack(pady=10)
 
         self.tax_rate_label = tk.Label(self, text="Tax Rate (%)")
         self.tax_rate_label.pack()
         self.tax_rate_entry = tk.Entry(self, width=30, bg="black", fg="white", font="Arial 20 bold", borderwidth=5, relief="sunken", insertbackground="white")
         self.tax_rate_entry.pack()
         self.tax_button = tk.Button(self, text="Calculate Net Income", command=self.calculate_net_income, width=30, height=2,) 
-        self.tax_button.pack()
+        self.tax_button.pack(pady = 10)
 
         self.expense_label = tk.Label(self, text="Expense")
         self.expense_label.pack()
@@ -80,16 +81,16 @@ class Application(tk.Frame):
         self.expense_category_combobox.pack()
 
         self.expense_button = tk.Button(self, text="Add Expense", command=self.add_expense, width=30, height=2,)
-        self.expense_button.pack()
+        self.expense_button.pack(pady = 10)
 
         self.remaining_budget_button = tk.Button(self, text="Show Remaining Budget", command=self.show_remaining_budget, width=30, height=2,)
         self.remaining_budget_button.pack()
 
         self.show_expenditures_button = tk.Button(self, text="Show Expenditures", command=self.show_expenditures, width=30, height=2,)
-        self.show_expenditures_button.pack()
+        self.show_expenditures_button.pack(pady = 10)
 
         self.download_button = tk.Button(self, text="Download Data", command=self.download_data_as_csv, width=30, height=2,)
-        self.download_button.pack()
+        self.download_button.pack(pady = 10)
 
         self.amount_label = tk.Label(self, text="Amount")
         self.amount_label.pack()
@@ -107,7 +108,7 @@ class Application(tk.Frame):
         self.to_currency_combobox.pack()
 
         self.convert_button = tk.Button(self, text="Convert Currency", command=self.convert_currency, width=30, height=2,)
-        self.convert_button.pack()
+        self.convert_button.pack(pady = 10)
 
         self.quit = tk.Button(self, text="QUIT", fg="red", command=self.master.destroy, width=10, height=2,)
         self.quit.pack()
