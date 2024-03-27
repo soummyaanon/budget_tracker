@@ -54,7 +54,7 @@ class Application(tk.Frame):
 
 # Create the widgets
     def create_widgets(self):
-        self.config(bg= "cyan")
+        self.config(bg= "gray")
         
         self.income_label = tk.Label(self, text="Personal Budget Trackert", width=100, height=2)
         self.income_label.pack()
